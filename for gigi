@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>for you</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #d12f6a;
+      color: #cabebe;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #e0f7fa;
+      padding: 40px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInDown 1.2s forwards;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #00796b;
+    }
+
+    .content {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.2s forwards;
+      animation-delay: 0.6s;
+    }
+
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .images img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .music-player {
+      margin-top: 40px;
+    }
+
+    .music-player button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #b2dfdb;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .music-player button:hover {
+      background-color: #80cbc4;
+    }
+
+    footer {
+      background-color: #e0f2f1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+      animation-delay: 1.2s;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>أهلاً! أنا أريام</h1>
+  </header>
+
+  <div class="content">
+    <p>
+      هذا موقعي الشخصي البسيط ✨  
+      أحب البرمجة والتصميم وكل شيء جميل ولطيف!  
+      هنا بعض من اللحظات أو الأشياء اللي أحبها:
+    </p>
+
+    <div class="images">
+      <img src="https://via.placeholder.com/160?text=صورة+1" alt="صورة 1">
+      <img src="https://via.placeholder.com/160?text=صورة+2" alt="صورة 2">
+      <img src="https://via.placeholder.com/160?text=صورة+3" alt="صورة 3">
+      <img src="https://via.placeholder.com/160?text=صورة+4" alt="صورة 4">
+    </div>
+
+    <div class="music-player">
+      <audio id="bgMusic" loop>
+        <source src="Touch_CigarettesAfterSex.mp3" type="audio/mpeg">
+        متصفحك لا يدعم تشغيل الصوت.
+      </audio>
+      <button onclick="toggleMusic()">🎵 تشغيل / إيقاف الموسيقى</button>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 أريام. كل الحقوق محفوظة.
+  </footer>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+
+</body>
+</html>
